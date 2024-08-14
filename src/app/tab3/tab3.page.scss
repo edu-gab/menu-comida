@@ -1,0 +1,31 @@
+ion-card {
+  --background: blue;
+  --color: #9efff0;
+}
+
+ion-card-title {
+  --color: #52ffe4;
+}
+
+ion-card-subtitle {
+  --color: #d1fff8;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  ion-card-title {
+    font-size: xx-large;
+    margin: 0;
+  }
+}
+
+  
