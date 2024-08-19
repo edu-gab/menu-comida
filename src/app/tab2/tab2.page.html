@@ -1,47 +1,49 @@
-<ion-searchbar placeholder="Ingredientes"></ion-searchbar>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ingredientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content>
-  <div class="card-grid">
-    <ion-card>
-      <img alt="Silhouette of mountains" src="https://definicion.de/wp-content/uploads/2011/02/carne-1.jpg" />
-      <ion-card-header>
-        <ion-card-title>Carne</ion-card-title>
-      </ion-card-header>
-    </ion-card>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Level #2</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-    <ion-card>
-      <img alt="Silhouette of mountains" src="https://www.hola.com/horizon/landscape/ec0d025fe8bc-tomate-t.jpg" />
-      <ion-card-header>
-        <ion-card-title>Tomate</ion-card-title>
-      </ion-card-header>
-    </ion-card>
+  <div class="ion-padding">
+    <!--p>Add custom styles and compose with other elements.</p-->
 
-    <ion-card>
-      <img alt="Silhouette of mountains" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_6SnpgtxLAzwQr9UyChh7jDxkt2Sw1LxTg&s" />
-      <ion-card-header>
-        <ion-card-title>Pescado</ion-card-title>
-      </ion-card-header>
-    </ion-card>
+    <h1 class="ion-text-center">Que ingredientes tienes disponible?</h1>
+    <p class="ion-text-center">Selecciona los ingredientes con los que quieres preparar tu comida </p>
 
-    <ion-card>
-      <img alt="Silhouette of mountains" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3b0fucC4ZjVkPJW86tCkzK3sNzWQXCWGmjQ&s" />
-      <ion-card-header>
-        <ion-card-title>Cebolla</ion-card-title>
-      </ion-card-header>
-    </ion-card>
-
-    <ion-card>
-      <img alt="Silhouette of mountains" src="https://www.hola.com/horizon/landscape/918cb28d3a78-pan-leche-t.jpg" />
-      <ion-card-header>
-        <ion-card-title>Pan</ion-card-title>
-      </ion-card-header>
-    </ion-card>
-
-    <ion-card>
-      <img alt="Silhouette of mountains" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Y3_BtO3A7-Ciwz-5YZRAk8iukCP6roQWow&s" />
-      <ion-card-header>
-        <ion-card-title>Pollo</ion-card-title>
-      </ion-card-header>
-    </ion-card>
+    <ion-row>
+      <ion-col size="6">
+        <div class="checkbox-content" [style.--img-src]="'url(https://definicion.de/wp-content/uploads/2011/02/carne-1.jpg)'">
+          <ion-label class="checkbox-title">Carne</ion-label>
+          <ion-checkbox class="checkbox-item" value="carne" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="checkbox-content" [style.--img-src]="'url(https://www.hola.com/horizon/landscape/ec0d025fe8bc-tomate-t.jpg)'">
+          <ion-label class="checkbox-title">Tomate</ion-label>
+          <ion-checkbox class="checkbox-item" value="tomate"></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="checkbox-content" [style.--img-src]="'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_6SnpgtxLAzwQr9UyChh7jDxkt2Sw1LxTg&s)'">
+          <ion-label class="checkbox-title">Pescado </ion-label>
+          <ion-checkbox class="checkbox-item" value="pescado"></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="checkbox-content" [style.--img-src]="'url(https://www.hola.com/horizon/landscape/918cb28d3a78-pan-leche-t.jpg)'">
+          <ion-label class="checkbox-title">Pan</ion-label>
+          <ion-checkbox class="checkbox-item" value="pan"></ion-checkbox>
+        </div>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-content>

@@ -1,0 +1,11 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Ajusta el espacio entre las tarjetas */
+    padding: 0; /* Elimina cualquier padding extra */
+}
+
+ion-card {
+    margin: 0; /* Elimina el margen por defecto */
+    display: flex;
+  }
