@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Level #1
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,73 +9,58 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Level #1</ion-title>
+      <ion-title size="large">Level #2</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <ion-toolbar>
+    <ion-title>
+      Plato del día
+    </ion-title>
+  </ion-toolbar>
+
+<div class="ion-padding">
+  <ion-row>
+    <div class="checkbox-content" [style.--img-src]="'url(https://i.pinimg.com/736x/3b/31/d4/3b31d452a97bbabb17f34875fd44d7fb.jpg)'">
+
+      <ion-label class="checkbox-title">Encebollado</ion-label>
+    </div>
+  </ion-row>
+</div>
+
+  <ion-toolbar>
+    <ion-title>
+      Platos recomendados
+    </ion-title>
+  </ion-toolbar>
+
   <div class="ion-padding">
-    <p>Let's customize Ionic Components by using <b>CSS variables</b> and <b>Shadow Parts</b>.</p>
+    <ion-row>
 
-    <h1 class="ion-text-center">Ion Checkbox</h1>
-    <p class="ion-text-center">Check out all the <a href="https://ionicframework.com/docs/api/checkbox#css-custom-properties" target="_blank">CSS Custom Properties</a> and <a href="https://ionicframework.com/docs/api/checkbox#css-shadow-parts" target="_blank">Shadow Parts</a> available for customization.</p>
+        <div class="checkbox-content" [style.--img-src]="'url(https://i.pinimg.com/236x/3f/a1/ff/3fa1ff58470d0f07b15f32fa2056931a.jpg)'">
+          <ion-label class="checkbox-title">Chaulafan</ion-label>
+        </div>
 
-    <ion-list>
-      <ion-list-header>
-        <ion-label>CSS Properties</ion-label>
-      </ion-list-header>
-      <ion-item>
-        <ion-label>Raw checkbox</ion-label>
-        <ion-checkbox slot="start" checked></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Background Color</ion-label>
-        <ion-checkbox slot="start" style="--background:grey" color="dark"></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Border Color</ion-label>
-        <ion-checkbox slot="start" style="--border-color:red" color="danger"></ion-checkbox>
-      </ion-item>
+    </ion-row>
+    <ion-row>
+        <div class="checkbox-content" [style.--img-src]="'url(https://i.pinimg.com/236x/d9/03/8d/d9038d8bee836a3f7faf2376eec28056.jpg)'">
+          <ion-label class="checkbox-title">Tortilla de huevo</ion-label>
+        </div>
+    </ion-row>
 
-      <ion-item>
-        <ion-label>Square & Red</ion-label>
-        <ion-checkbox slot="start" checked style="--border-radius:0px; --border-color:red; --background-checked:red; --border-color-checked:red;">
-        </ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Round</ion-label>
-        <ion-checkbox slot="start" color="secondary" style="--border-radius: 50%;"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Checkmark width</ion-label>
-        <ion-checkbox slot="start" checked color="secondary" style="--border-radius: 0px; --checkmark-width: 4px;">
-        </ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Bigger Size</ion-label>
-        <ion-checkbox slot="start" checked color="secondary" style="--size: 40px;"></ion-checkbox>
-      </ion-item>
-
-      <ion-list-header>
-        <ion-label>Shadow Parts</ion-label>
-      </ion-list-header>
-      <ion-item>
-        <ion-label>Custom Mark Icon</ion-label>
-        <ion-checkbox slot="start" class="custom-mark-star" mode="ios"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Custom Mark Icon</ion-label>
-        <ion-checkbox slot="start" checked class="custom-mark-plus" mode="ios"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Custom Mark & Animation</ion-label>
-        <ion-checkbox #animatedIcon slot="start" class="custom-mark-heart" (ionChange)="animate()" mode="ios">
-        </ion-checkbox>
-      </ion-item>
-    </ion-list>
+    <ion-row>
+      <ion-col size="6">
+        <div class="checkbox-content" [style.--img-src]="'url(https://www.hola.com/horizon/landscape/ec0d025fe8bc-tomate-t.jpg)'">
+          <ion-label class="checkbox-title">Tomate </ion-label>
+          <ion-checkbox class="checkbox-item" value="pescado"></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="checkbox-content" [style.--img-src]="'url(https://www.hola.com/horizon/landscape/918cb28d3a78-pan-leche-t.jpg)'">
+          <ion-label class="checkbox-title">Pan</ion-label>
+          <ion-checkbox class="checkbox-item" value="pan"></ion-checkbox>
+        </div>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-content>
