@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons , IonButton, IonCol,
+  IonRow, IonBackButton, IonIcon, IonInput, IonLabel, IonItem, IonText, IonList, IonThumbnail
+} from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import {IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent} from '@ionic/angular/standalone';
 
@@ -8,7 +10,9 @@ import {IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent} f
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonCard,
+     IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonButtons, IonButton, IonCol,
+     IonRow, IonBackButton, IonIcon, IonInput, IonLabel, IonItem, IonText,IonList, IonThumbnail],
 })
 export class Tab3Page {
   constructor() {}

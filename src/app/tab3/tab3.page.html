@@ -1,29 +1,33 @@
-<ion-content>
-  <ion-card>
-    <ion-card-header class="card-header">
-      <img alt="perfil" src="assets/323422643_466074495536448_1064292539205350281_n.jpg">
-      <ion-card-title>ID-2468-XYZ-1234</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-  
-  <ion-card>
-    <ion-card-title>Nombre de Usuario</ion-card-title>
-    <ion-card-content>egsanchez</ion-card-content>
-  </ion-card>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="sign-in"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-card>
-    <ion-card-title>Nombre Completo</ion-card-title>
-    <ion-card-content>Eduardo Sanchez</ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-title>Correo</ion-card-title>
-    <ion-card-content>egsanche&#64;espol.edu.ec</ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-title>Número de teléfono</ion-card-title>
-    <ion-card-content>+593 123456789</ion-card-content>
-  </ion-card>
-  
+<ion-content class="profile-content">
+  <ion-row class="user-details-wrapper">
+    <ion-col size="6" class="user-image-wrapper">
+      <img class="user-image" src="assets/323422643_466074495536448_1064292539205350281_n.jpg">
+    </ion-col>
+    <ion-col class="user-info-wrapper" size="12">
+      <h3>Eduardo Sanchez</h3>
+      <p>ID-1234</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <h4>Teléfono</h4>
+      <p>
+        +593 123456789
+      </p>
+    </ion-col>
+    <ion-col size="12">
+      <h4>Correo</h4>
+      <p>
+        egsanche&#64;espol.edu.ec
+      </p>
+    </ion-col>
+  </ion-row>
 </ion-content>
