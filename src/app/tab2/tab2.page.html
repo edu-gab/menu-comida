@@ -12,30 +12,17 @@
     <p class="ion-text-center">Selecciona los ingredientes con los que quieres preparar tu comida </p>
 
     <ion-row>
-      <ion-col size="6">
-        <div class="checkbox-content" [style.--img-src]="'url(https://definicion.de/wp-content/uploads/2011/02/carne-1.jpg)'">
-          <ion-label class="checkbox-title">Carne</ion-label>
-          <ion-checkbox class="checkbox-item" value="carne" ></ion-checkbox>
-        </div>
-      </ion-col>
-      <ion-col size="6">
-        <div class="checkbox-content" [style.--img-src]="'url(https://www.hola.com/horizon/landscape/ec0d025fe8bc-tomate-t.jpg)'">
-          <ion-label class="checkbox-title">Tomate</ion-label>
-          <ion-checkbox class="checkbox-item" value="tomate"></ion-checkbox>
-        </div>
-      </ion-col>
-      <ion-col size="6">
-        <div class="checkbox-content" [style.--img-src]="'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_6SnpgtxLAzwQr9UyChh7jDxkt2Sw1LxTg&s)'">
-          <ion-label class="checkbox-title">Pescado </ion-label>
-          <ion-checkbox class="checkbox-item" value="pescado"></ion-checkbox>
-        </div>
-      </ion-col>
-      <ion-col size="6">
-        <div class="checkbox-content" [style.--img-src]="'url(https://www.hola.com/horizon/landscape/918cb28d3a78-pan-leche-t.jpg)'">
-          <ion-label class="checkbox-title">Pan</ion-label>
-          <ion-checkbox class="checkbox-item" value="pan"></ion-checkbox>
-        </div>
+      <ion-col size="6" *ngFor="let item of ingredients">
+        
+          <div class="checkbox-content" [style.--img-src]="'url(' + item.img + ')'" >
+            <ion-label class="checkbox-title">{{ item.name }}</ion-label>
+            <ion-checkbox class="checkbox-item" [value]="item.name" slot="end" [(ngModel)]="item.selected"></ion-checkbox>
+          </div>
+        
       </ion-col>
     </ion-row>
+    <ion-button expand="full" (click)="sendSelection()">Buscar receta</ion-button>
+
+    
   </div>
 </ion-content>
