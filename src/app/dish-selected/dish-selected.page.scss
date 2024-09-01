@@ -1,0 +1,21 @@
+.checkbox-content {
+    background: var(--img-src), rgba(0, 0, 0, .40);
+    background-size: cover;
+    background-blend-mode: overlay;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 300px; 
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    
+    .checkbox-title {
+      color: white; 
+      font-weight: bold;
+      margin: 8px;
+      font-size: 20px;
+      text-shadow: 2px 2px 0px black, -2px 2px 0px black, 2px -2px 0px black, -2px -2px 0px black; /* Bordes negros */
+    }
+  }

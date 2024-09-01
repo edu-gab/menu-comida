@@ -55,6 +55,7 @@ export class Tab2Page {
     { name: 'Leche semidescremada', img:'https://www.fybeca.com/dw/image/v2/BDPM_PRD/on/demandware.static/-/Sites-masterCatalog_FybecaEcuador/default/dw5c99bf73/images/large/38805_1.jpg?sw=1000&sh=1000', selected: false },
     { name: 'Fideo tornillo', img:'https://img.freepik.com/fotos-premium/fondo-textura-fideos-tornillo-tres-colores_437937-939.jpg', selected: false },
     { name: 'Atún', img:'https://regionnet.com.ar/wp-content/uploads/2022/05/beneficios-del-atun-1.jpg', selected: false },
+    { name: 'Mayonesa', img:'https://i.blogs.es/8a4ab6/mayonesa_rec/450_1000.jpg', selected: false },
     { name: 'Mostaza', img:'https://mejorconsalud.as.com/wp-content/uploads/2022/06/mostaza.jpg', selected: false },
     { name: 'Pimienta negra', img:'https://actualfruveg.com/wp-content/uploads/2022/08/Pimienta-negra-2.jpg', selected: false },
     { name: 'Carne de cerdo', img:'https://secure.porcicultura.com/uploads/Upload-5ebd90f523a6d-14052020.jpeg', selected: false },
@@ -66,11 +67,11 @@ export class Tab2Page {
   constructor(private navCtrl: NavController) {}
 
   sendSelection() {
-    const selectedItems = this.ingredients.filter(item => item.selected);
+    const selectedItems = this.ingredients.filter(item => item.selected).map(item => item.name);
     console.log('Elementos seleccionados:', selectedItems);
 
     this.navCtrl.navigateForward('dish-selected', {
-      queryParams: { ingredients: JSON.stringify(selectedItems) }
+      queryParams: { ingredients: JSON.stringify(selectedItems)}
     });
   }
 

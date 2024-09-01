@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Recetas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <ion-row>
+      <ion-col *ngFor="let dish of filteredItems" size="6" size-md="4" size-lg="3">
+        <div class="checkbox-content" [style.--img-src]="'url(' + dish.img + ')'" (click)="goToDishRecipe(dish)">
+          <ion-label class="checkbox-title">{{ dish.name }}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-button (click)="goBack()" expand="full">
+    <ion-icon name="arrow-back"></ion-icon>
+    Regresar
+  </ion-button>
+</ion-content>

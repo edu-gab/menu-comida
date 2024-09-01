@@ -1,23 +1,30 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCheckbox,
-  IonLabel, IonCol, IonRow, IonGrid } from '@ionic/angular/standalone';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonList, IonIcon, IonButton, IonRow, IonCol } from '@ionic/angular/standalone';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss'],
+  selector: 'app-dish-selected',
+  templateUrl: './dish-selected.page.html',
+  styleUrls: ['./dish-selected.page.scss'],
   standalone: true,
-  imports: [IonGrid, IonHeader, IonToolbar, IonTitle, IonContent, IonCheckbox,
-  IonLabel, IonCol, IonRow, CommonModule]
+  imports: [IonCol, IonRow, IonButton, IonIcon, IonList, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class Tab1Page {
+export class DishSelectedPage implements OnInit {
+  selectedItems: any[] = [];
+  filteredItems: any[] = [];
   recommendedDishes = [
     {
+      name: 'Encebollado',
+      ingredientes: 'Aceite vegetal, Cebolla morada, Tomate, Comino, Salsa de Ají, Agua, Cilantro, Albacora, Yuca, Pimiento verde, Pimiento rojo, Apio, Cubos de caldo de gallina, Diente de Ajo, Limón',
+      img: 'https://i.pinimg.com/736x/3b/31/d4/3b31d452a97bbabb17f34875fd44d7fb.jpg',
+      recipe: "prueba"
+    },
+    {
       name: 'Chaulafan',
-      ingredientes: '',
+      ingredientes: 'Arroz, Pollo, Arvejas, Aceite vegetal, Cebolla perla, Pimiento verde, Zanahoria, Cubos de caldo de gallina, Cilantro, Platano maduro',
       img: 'https://i.pinimg.com/236x/3f/a1/ff/3fa1ff58470d0f07b15f32fa2056931a.jpg',
       recipe: "prueba"
     },
@@ -39,7 +46,7 @@ Sirve
     },
     {
       name: 'Estofado de carne',
-      ingredientes: '',
+      ingredientes: 'Cebolla perla, Papa, Diente de Ajo, Carne de Res, Tomillo fresco, Laurel, Pasta de tomate, Vino tinto, Zanahoria, Aceite vegetal, Arvejas, Sal, Pimienta negra',
       img: 'https://i.ytimg.com/vi/39d9fGWD6V4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA5XSo08vwKOORkqctNhG-P60cYHg',
       recipe: `En el sartén 
 
@@ -59,7 +66,7 @@ Sirve
     },
     {
       name: 'Cazuela de pescado',
-      ingredientes: '',
+      ingredientes: 'Platano verde, Mantequilla, Cebolla larga, Sal prieta, Maní tostado, Leche semidescremada, Aceite vegetal, Cebolla morada, Tomate, Pimiento verde, Comino, Sobre de caldo de gallina, Albacora, Cilantro, Limón',
       img: 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/cda13d770e8135d603f5d37d1080c00f.jpg',
       recipe: `Prepara el refrito: 
 
@@ -81,7 +88,7 @@ Cocínalas:
     },
     {
       name: 'Ensalada de fideo con atun',
-      ingredientes: '',
+      ingredientes: 'Fideo tornillo, Atún, Mostaza, Pimienta negra, Cubos de caldo de gallina, Tomate, Apio, Cebolla morada, Pimiento verde, Mostaza, Sal, Pimienta negra, Cilantro, Mayonesa',
       img: 'https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/455efba75ef22885a68be73037486250.png',
       recipe: `1.Cocina los fideos junto con 1 Caldo de Gallina en Cubo de 4 gramos MAGGI® hasta que estén suaves. Retíralos del fuego y enfríalos rápidamente en agua fría. Prepara un recipiente transparente y alto. 
 
@@ -91,7 +98,7 @@ Cocínalas:
     },
     {
       name: 'Fritada',
-      ingredientes: '',
+      ingredientes: 'Carne de cerdo, Diente de Ajo, La sazón, Agua, Sobre de caldo de gallina, Aceite vegetal, Mote, Papa chaucha, Platano maduro, Tomate, Cebolla morada, Limón, Cilantro',
       img: 'https://www.aki.com.ec/wp-content/uploads/2021/01/fritada_criolla.jpg',
       recipe: `Prepara la carne 
 
@@ -111,12 +118,27 @@ Arma el plato final
     }
   ];
 
-  constructor(private router: Router,
+  constructor(private route: ActivatedRoute, 
               private navCtrl: NavController,
-              ) {}
+              private router: Router) { }
 
   goBack() {
     this.navCtrl.back();
+  }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if (params && params['ingredients']) {
+        this.selectedItems = JSON.parse(params['ingredients']); 
+        console.log('Result Object:', this.selectedItems);
+
+        this.filteredItems = this.recommendedDishes.filter(item => {
+          const nameParts = item.ingredientes.split(', ').map(part => part.trim());
+          return this.selectedItems.every(selectedItem => nameParts.includes(selectedItem));
+        });
+        console.log('res:', this.filteredItems);
+      }
+    });
   }
 
   goToDishRecipe(dish: any){
@@ -126,4 +148,5 @@ Arma el plato final
       }
     })
   }
+
 }
